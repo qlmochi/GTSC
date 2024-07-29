@@ -1,0 +1,230 @@
+/* css/style.css */
+
+/* Reset some default styles */
+body, h1, h2, h3, p, ul {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #f7f7f7;
+    color: #333;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+a {
+    color: #000;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: #333;
+}
+
+.boxcenter {
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.row-mb-headeradmin {
+    text-align: center;
+    margin-bottom: 20px;
+    background-color: #e9e9e9;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.row-mb-headeradmin h1 {
+    font-size: 2em;
+    color: #333;
+}
+
+.row-mb-menu {
+    margin-bottom: 20px;
+    background-color: #000;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.row-mb-menu ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+}
+
+.row-mb-menu ul li {
+    display: inline;
+}
+
+.row-mb-menu ul li a {
+    font-size: 1em;
+    color: #fff;
+    padding: 10px 15px;
+    display: block;
+    transition: background-color 0.3s;
+}
+
+.row-mb-menu ul li a:hover {
+    background-color: #333;
+    color: #fff;
+}
+
+.row {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.row-frmtitle {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.row-frmtitle h1 {
+    font-size: 1.5em;
+    color: #333;
+}
+
+.row-frmcontent {
+    text-align: left;
+}
+
+.row-mb10 {
+    margin-bottom: 10px;
+}
+
+.row-mb10 input[type="text"],
+.row-mb10 input[type="submit"],
+.row-mb10 input[type="button"] {
+    padding: 10px;
+    width: calc(100% - 22px);
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    transition: border-color 0.3s;
+}
+
+.row-mb10 input[type="text"] {
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+.row-mb10 input[type="submit"],
+.row-mb10 input[type="button"] {
+    background-color: #000;
+    color: #fff;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.3s;
+}
+
+.row-mb10 input[type="submit"]:hover,
+.row-mb10 input[type="button"]:hover {
+    background-color: #333;
+}
+
+.row-mb10 input[type="text"]:focus,
+.row-mb10 input[type="submit"]:focus,
+.row-mb10 input[type="button"]:focus {
+    outline: none;
+    border-color: #000;
+}
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 20px;
+}
+
+.row-frmtitle {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.row-frmtitle h1 {
+    margin: 0;
+    font-size: 24px;
+    color: #333;
+}
+
+.row-frmcontent {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.row-mb10-frmdsloai table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.row-mb10-frmdsloai table th,
+.row-mb10-frmdsloai table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+}
+
+.row-mb10-frmdsloai table th {
+    background-color: #f4f4f4;
+}
+
+.row-mb10-frmdsloai table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.row-mb10-frmdsloai table tr:hover {
+    background-color: #f1f1f1;
+}
+
+.row-mb10 input[type="button"] {
+    background-color: #007bff;
+    border: none;
+    color: white;
+    padding: 10px 15px;
+    margin: 5px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.row-mb10 input[type="button"]:hover {
+    background-color: #0056b3;
+}
+
+.row-mb10 a input[type="button"] {
+    background-color: #28a745;
+}
+
+.row-mb10 a input[type="button"]:hover {
+    background-color: #218838;
+}
+
+.row-mb10 input[type="button"].delete {
+    background-color: #dc3545;
+}
+
+.row-mb10 input[type="button"].delete:hover {
+    background-color: #c82333;
+}
+
+.row-mb10 input[type="button"].select-all,
+.row-mb10 input[type="button"].deselect-all {
+    background-color: #17a2b8;
+}
+
+.row-mb10 input[type="button"].select-all:hover,
+.row-mb10 input[type="button"].deselect-all:hover {
+    background-color: #117a8b;
+}
