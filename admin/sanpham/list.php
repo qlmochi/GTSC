@@ -60,9 +60,7 @@
                         </table>
                     </div>
                     <div class="row-mb10">
-                        <!-- <input type="button" value="Chọn Tất Cả">
-                        <input type="button" value="Bỏ chọn Tất Cả">
-                        <input type="button" value="Xóa các mục đã"> -->
+                        
                         <a href="index.php?act=addsp"><input type="button" value="Nhập thêm"></a>
                     </div>
                 </div>
