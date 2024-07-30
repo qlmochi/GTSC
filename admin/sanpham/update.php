@@ -1,4 +1,4 @@
-    <?php
+<?php
     if(is_array($sanpham)){
         extract($sanpham);
     }
@@ -18,7 +18,18 @@
     <div class="row-frmcontent">
         <form action="index.php?act=updatesp" method="post" enctype="multipart/form-data">
             <div class="row-mb10">
-                
+            <select name="iddm" >
+                                <option value="0" selected>Tất cả</option>
+                                <?php
+                                    foreach ($listdanhmuc as $danhmuc) {
+                                       
+                                       $dm_id = $danhmuc['id'];
+                                       $dm_name = $danhmuc['name'];
+                                       $selected = ($iddm == $dm_id) ? 'selected' : '';
+                                       echo "<option value='$dm_id' $selected>$dm_name</option>";
+                                    }
+                                ?>
+                            </select>
             </div>
             <div class="row-mb10">
                 Tên sản phẩm<br>
@@ -38,8 +49,9 @@
                 <textarea name="mota" cols="30" rows="10"><?= $mota?></textarea>
             </div>
             <div class="row-mb10">
+                <input type="hidden" name="id" value="<?=$id?>">
                 <input type="submit" name="capnhap" value="Cập Nhật">
-                <input type="reset" value="Nhập Lại">
+                <input type="submit" value="Nhập Lại">
                 <a href="index.php?act=listsp"><input type="button" value="Danh Sách"></a>
             </div>
                     <?php

@@ -1,0 +1,187 @@
+/* css/style.css */
+
+body {
+    background-color: black;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+a {
+    color: white;
+}
+
+.boxcenter {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid white;
+    box-shadow: 0 0 10px white;
+}
+
+.row-mb-headeradmin {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.row-mb-headeradmin h1 {
+    font-size: 2em;
+    color: white;
+}
+
+.row-mb-menu ul {
+    list-style-type: none;
+    padding: 0;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.row-mb-menu ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+.row-mb-menu ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+.row {
+    background-color: #333;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.row-frmtitle {
+    margin-bottom: 20px;
+}
+
+.row-frmtitle h1 {
+    font-size: 1.5em;
+    color: white;
+    text-align: center;
+}
+
+.row-frmcontent {
+    text-align: center;
+}
+
+.row-mb10 {
+    margin-bottom: 10px;
+}
+
+.row-mb10 input[type="text"],
+.row-mb10 input[type="submit"],
+.row-mb10 input[type="button"] {
+    padding: 10px;
+    width: calc(100% - 22px);
+    border: none;
+    border-radius: 5px;
+}
+
+.row-mb10 input[type="text"] {
+    background-color: #444;
+    color: white;
+}
+
+.row-mb10 input[type="submit"],
+.row-mb10 input[type="button"] {
+    background-color: #555;
+    color: white;
+    cursor: pointer;
+}
+
+.row-mb10 input[type="submit"]:hover,
+.row-mb10 input[type="button"]:hover {
+    background-color: #666;
+}
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    margin: 0;
+    padding: 20px;
+}
+
+.row-frmtitle {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.row-frmtitle h1 {
+    margin: 0;
+    font-size: 24px;
+    color: #333;
+}
+
+.row-frmcontent {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.row-mb10-frmdsloai table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.row-mb10-frmdsloai table th,
+.row-mb10-frmdsloai table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+}
+
+.row-mb10-frmdsloai table th {
+    background-color: #f4f4f4;
+}
+
+.row-mb10-frmdsloai table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.row-mb10-frmdsloai table tr:hover {
+    background-color: #f1f1f1;
+}
+
+.row-mb10 input[type="button"] {
+    background-color: #007bff;
+    border: none;
+    color: white;
+    padding: 10px 15px;
+    margin: 5px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.row-mb10 input[type="button"]:hover {
+    background-color: #0056b3;
+}
+
+.row-mb10 a input[type="button"] {
+    background-color: #28a745;
+}
+
+.row-mb10 a input[type="button"]:hover {
+    background-color: #218838;
+}
+
+.row-mb10 input[type="button"].delete {
+    background-color: #dc3545;
+}
+
+.row-mb10 input[type="button"].delete:hover {
+    background-color: #c82333;
+}
+
+.row-mb10 input[type="button"].select-all,
+.row-mb10 input[type="button"].deselect-all {
+    background-color: #17a2b8;
+}
+
+.row-mb10 input[type="button"].select-all:hover,
+.row-mb10 input[type="button"].deselect-all:hover {
+    background-color: #117a8b;
+}

@@ -1,3 +1,4 @@
+<!-- thêm hàng hóa  -->
 <div class="row">
             <div class="row-frmtitle">
                 <h1>Thêm Mới Loại Hàng Hóa</h1>

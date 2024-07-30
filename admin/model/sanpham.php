@@ -1,7 +1,8 @@
 <?php
-    function insert_sanpham($iddanhmuc, $tensp, $giasp, $hinhsp, $mota){
-        $sql = "INSERT INTO sanpham (iddm, name, price, img, mota) VALUES ('$iddanhmuc', '$tensp', '$giasp', '$hinhsp', '$mota')";
+    function insert_sanpham($iddm, $tensp, $giasp, $hinhsp, $mota){
+        $sql = "INSERT INTO sanpham (iddm, name, price, img, mota) VALUES ('$iddm', '$tensp', '$giasp', '$hinhsp', '$mota')";
         pdo_execute($sql);
+
     }
     
     function delete_sanpham($id){
@@ -9,13 +10,13 @@
         pdo_execute($sql);
     }
 
-    function loadall_sanpham($kyw, $iddanhmuc){
+    function loadall_sanpham($kyw, $iddm){
         $sql = "SELECT * FROM sanpham WHERE 1";
         if ($kyw != ""){
             $sql .= " AND name LIKE '%$kyw%'";
         }
-        if ($iddanhmuc > 0){
-            $sql .= " AND iddm = $iddanhmuc";
+        if ($iddm > 0){
+            $sql .= " AND iddm = $iddm";
         }
         $sql .= " ORDER BY id DESC";
         $listsanpham = pdo_query($sql);
@@ -28,13 +29,16 @@
         return $dm;
     }
 
-    function update_sanpham($id, $iddanhmuc, $tensp, $giasp, $hinhsp, $mota){
-        if ($hinhsp != "") {
-            $sql = "UPDATE sanpham SET iddm = '$iddanhmuc', name = '$tensp', price = '$giasp', img = '$hinhsp', mota = '$mota' WHERE id = $id";
-        } else {
-            $sql = "UPDATE sanpham SET iddm = '$iddanhmuc', name = '$tensp', price = '$giasp', mota = '$mota' WHERE id = $id";
+    
+    function update_sanpham($id, $iddm, $name, $price, $img, $mota) {
+        $sql = "UPDATE sanpham SET iddm='$iddm', name='$name', price='$price', mota='$mota'";
+        if ($img != "") {
+            $sql .= ", img='$img'";
         }
+        $sql .= " WHERE id=".$id;
         pdo_execute($sql);
     }
+    
+    
     
 ?>

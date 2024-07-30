@@ -1,26 +1,34 @@
 <?php
+
+//  file chính
+// gọi cách hàm 
     include 'model/pdo.php';
     include "model/danhmuc.php";
     include "model/sanpham.php";
     include "header.php";
     session_start();
-
+//  check sesion
     if(!isset($_SESSION['mySession'])){
             header('location:login.php');
     }
 
     //controller
+    // tham số url
     if (isset($_GET['act'])) {
         $act = $_GET['act'];
     switch ($act) {
         case 'adddm':
+            //check 
             if(isset($_POST['themmoi'])&&($_POST['themmoi'])){
                  $tenloai=$_POST['tenloai'];
+                //  them vào csdl 
                  insert_danhmuc($tenloai);
+                //  alert
                  $nofication="Thêm thành công";
 
 
             }
+
             include "danhmuc/add.php";
             break;
         case 'listdm':
@@ -57,8 +65,9 @@
 
             /* controller san pham */
             case 'addsp':
+               
                 if (isset($_POST['themmoi']) && $_POST['themmoi']) {
-                    $iddanhmuc = $_POST['iddanhmuc'];
+                    $iddm = $_POST['iddm'];
                     $tensp = $_POST['tensp'];
                     $giasp = $_POST['giasp'];
                     $mota = $_POST['mota'];
@@ -72,7 +81,7 @@
                         echo "Sorry, there was an error uploading your file.";
                     }
                 
-                    insert_sanpham($iddanhmuc, $tensp, $giasp, $hinhsp, $mota);
+                    insert_sanpham($iddm, $tensp, $giasp, $hinhsp, $mota);
                     $nofication = "Thêm thành công";
                 }
                 $listdanhmuc = loadall_danhmuc();
@@ -81,18 +90,18 @@
             case 'listsp':
                 if (isset($_POST['listok']) && $_POST['listok']) {
                     $kyw=$_POST['kyw'];
-                    $iddanhmuc=$_POST['iddanhmuc'];
+                    $iddm=$_POST['iddm'];
                 }
                 else {
                     $kyw="";
-                    $iddanhmuc=0;
+                    $iddm=0;
                 }
                 $listdanhmuc = loadall_danhmuc();
-                $listsanpham = loadall_sanpham($kyw, $iddanhmuc);
+                $listsanpham = loadall_sanpham($kyw, $iddm);
                 include "sanpham/list.php";
                 break;
             case 'xoasp':
-                    if(isset($_GET['id'])&&($_GET['id']>0)){
+                if(isset($_GET['id'])&&($_GET['id']>0)){
                         delete_sanpham($_GET['id']);
                     }
                     $listsanpham = loadall_sanpham("",0);
@@ -106,31 +115,32 @@
                     include "sanpham/update.php";
                     break;
             case 'updatesp':
-                if(isset($_POST['capnhap'])&&($_POST['capnhap'])){
-                    $id = $_POST['id'];
-                    $iddanhmuc = $_POST['iddm'];
-                    $tensp = $_POST['tensp'];
-                    $giasp = $_POST['giasp'];
-                    $mota = $_POST['mota'];
-                    $hinhsp = $_FILES['hinhsp']['name'];
-                    $target_dir = "../upload/";
-                    $target_file = $target_dir . basename($_FILES["hinhsp"]["name"]);
-                    if (move_uploaded_file($_FILES["hinhsp"]["tmp_name"], $target_file)) {
-                        echo "The file " . htmlspecialchars(basename($_FILES["hinhsp"]["name"])) . " has been uploaded.";
-                    } else {
-                        echo "Sorry, there was an error uploading your file.";
+                 if (isset($_POST['capnhap']) && ($_POST['capnhap'])) {
+                        $id = $_POST['id'];
+                        $iddm = $_POST['iddm'];
+                        $tensp = $_POST['tensp'];
+                        $giasp = $_POST['giasp'];
+                        $mota = $_POST['mota'];
+                        $hinhsp = $_FILES['hinhsp']['name'];
+                        $target_dir = "../upload/";
+                        $target_file = $target_dir . basename($_FILES["hinhsp"]["name"]);
+                        if ($hinhsp != "" && move_uploaded_file($_FILES["hinhsp"]["tmp_name"], $target_file)) {
+                            echo "The file " . htmlspecialchars(basename($_FILES["hinhsp"]["name"])) . " has been uploaded.";
+                         } else {
+                          $hinhsp = ""; 
+                        }
+                  
+                    update_sanpham($id, $iddm, $tensp, $giasp, $hinhsp, $mota);
+                    $nofication="Update thành công";                   
                     }
-                
-                    update_sanpham($id,$iddanhmuc, $tensp, $giasp, $hinhsp, $mota);
-                    $nofication="Update thành công";
-    
-               }
-               $listdanhmuc = loadall_danhmuc();
-               $listsanpham = loadall_sanpham("",0);
+                    
+                    $listsanpham = loadall_sanpham("",0);
+                    
                     include "sanpham/list.php";
                     break;
+                            
     
-
+               
 
         default:
             include "home.php";

@@ -4,7 +4,7 @@
                 </div>
                 <form action="index.php?act=listsp" method="post">
                             <input type="text" name="kyw">
-                            <select name="iddanhmuc" >
+                            <select name="iddm" >
                                 <option value="0" selected>Tất cả</option>
                                 <?php
                                     foreach ($listdanhmuc as $danhmuc) {
@@ -25,8 +25,7 @@
                                 <th>Tên Sản Phẩm</th>
                                 <th>Giá Sản Phẩm</th>
                                 <th>Hình</th>
-                                <th>Mô Tả</th>
-                                <th>Lượt Xem</th>
+                                <th>Mô tả</th>
                                 <th></th>
                             </tr>
                             <?php
@@ -39,12 +38,12 @@
                                         $hinh="<img src='".$hinhpath."' height='100px'";
                                     }
                                     else{
-                                        $hinh="loading";
+                                        $hinh="";
                                     }
                                     echo '
                                         <tr>
                                             <td><input type="checkbox" name="" id=""></td>
-                                            <td>' .$id.' </td>
+                                            <td>'.$id.' </td>
                                             <td>'.$name.' </td>
                                             <td>'.$price.' </td>
                                             <td>'.$hinh.' </td>

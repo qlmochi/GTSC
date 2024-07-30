@@ -1,3 +1,4 @@
+<!-- file thêm sản phẩm  -->
 <div class="row">
             <div class="row-frmtitle">
                 <h1>Thêm Mới Sản Phẩm</h1>
@@ -6,7 +7,7 @@
                 <form action="index.php?act=addsp" method="post" enctype="multipart/form-data">
                     <div class="row-mb10">
                         Danh mục sản phẩm thuộc về<br>
-                        <select name="iddanhmuc" >
+                        <select name="iddm" >
                             <option value="">
                                 <?php
                                     foreach ($listdanhmuc as $danhmuc) {
